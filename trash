@@ -1,0 +1,37 @@
+"use strict";
+var hours;
+var wage;
+var gross;
+$(document).ready(function (){
+  $("#submit").click(function(){
+
+
+
+    hours = $("#hoursWorked").val();
+    wage = $("#wageperHour").val();
+    if (document.getElementById("single").checked)  {
+
+
+        gross = hours * wage ;
+        $("#grossIncome").html(gross);
+      console.log("single checked");
+      document.getElementById("single").checked = false;
+      document.getElementById("married").checked = false;
+      }
+
+      else if(document.getElementById("married").checked){
+        gross = hours * wage ;
+        $("#grossIncome").html(gross);
+        console.log("married checked");
+        document.getElementById("single").checked = false;
+        document.getElementById("married").checked = false;
+      }
+      else {
+        $("#errorRadio").html("Please select one check");
+        $("#errorRadio").css("color" , "red");
+        console.log("Please Choose one");
+      }
+
+
+});
+});
